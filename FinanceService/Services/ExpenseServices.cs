@@ -77,10 +77,18 @@ namespace FinanceService.Services
                 .SumAsync(e => e.Amount);
         }
 
-        public async Task<decimal> GetRemainingBudgetAsync(int tripId, decimal budget)
+        public async Task<BudgetSummaryDto> GetBudgetSummaryAsync(int tripId, decimal plannedBudget)
         {
-            var total = await GetTotalExpensesAsync(tripId);
-            return budget - total;
+            var total = await _context.Expenses
+                .Where(e => e.TripId == tripId)
+                .SumAsync(e => e.Amount);
+
+            return new BudgetSummaryDto
+            {
+                PlannedBudget = plannedBudget,
+                TotalExpenses = total,
+                RemainingBudget = plannedBudget - total
+            };
         }
     }
 }

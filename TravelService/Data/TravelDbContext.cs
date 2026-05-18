@@ -15,7 +15,7 @@ namespace TravelService.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Ignoriši entitete koji ne pripadaju ovoj bazi
+            // Ignorisi entitete koji ne pripadaju ovoj bazi
             modelBuilder.Ignore<User>();
 
             modelBuilder.Entity<Trip>(entity =>

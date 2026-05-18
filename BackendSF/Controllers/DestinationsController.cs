@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BackendSF.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using TravelPlanner.Shared.DTOs.Destination;
 using TravelPlanner.Shared.Interfaces;
+using TravelPlanner.Shared.Models;
 
 namespace BackendSF.Controllers
 {
     [ApiController]
     [Route("api/trips/{tripId}/destinations")]
     [Authorize]
+    [ServiceFilter(typeof(SharedLinkAccessFilter))]
     public class DestinationsController : ControllerBase
     {
         private readonly IDestinationServices _destinationServices;
@@ -48,7 +51,8 @@ namespace BackendSF.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int tripId, int id, [FromBody] UpdateDestinationDto dto)
         {
-            var destination = await _destinationServices.UpdateAsync(id, dto);
+            var destination = await _destinationServices.UpdateAsync(tripId,id, dto);
+         
             if (destination.Id == 0)
                 return BadRequest(new { message = "Invalid destination data or not found." });
             return Ok(destination);
@@ -57,7 +61,7 @@ namespace BackendSF.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int tripId, int id)
         {
-            var result = await _destinationServices.DeleteAsync(id);
+            var result = await _destinationServices.DeleteAsync(tripId, id);
             if (!result)
                 return NotFound(new { message = "Destination not found." });
             return NoContent();

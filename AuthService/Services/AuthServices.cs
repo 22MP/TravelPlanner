@@ -15,15 +15,13 @@ namespace AuthService.Services
     {
         private readonly AuthDbContext _context;
         private readonly IMapper _mapper;
+        private readonly JwtConfig _jwtConfig;
 
-        private const string JwtSecret = "TravelPlannerSuperSecretKey123!TravelPlannerSuperSecretKey123!";
-        private const string JwtIssuer = "TravelPlanner";
-        private const string JwtAudience = "TravelPlannerUsers";
-
-        public AuthServices(AuthDbContext context, IMapper mapper)
+        public AuthServices(AuthDbContext context, IMapper mapper, JwtConfig jwtConfig)
         {
             _context = context;
             _mapper = mapper;
+            _jwtConfig = jwtConfig;
         }
 
         public async Task<AuthResponseDto> RegisterAsync(RegisterRequestDto request)
@@ -37,12 +35,14 @@ namespace AuthService.Services
             var user = _mapper.Map<User>(request);
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             user.Role = "user";
+            user.CreatedAt = DateTime.UtcNow;
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return new AuthResponseDto
             {
+                UserId = user.Id,
                 Token = GenerateJwtToken(user),
                 Email = user.Email,
                 FirstName = user.FirstName,
@@ -61,6 +61,7 @@ namespace AuthService.Services
 
             return new AuthResponseDto
             {
+                UserId = user.Id,
                 Token = GenerateJwtToken(user),
                 Email = user.Email,
                 FirstName = user.FirstName,
@@ -88,7 +89,7 @@ namespace AuthService.Services
 
         private string GenerateJwtToken(User user)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtSecret));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Secret));
 
             var claims = new[]
             {
@@ -99,8 +100,8 @@ namespace AuthService.Services
             };
 
             var token = new JwtSecurityToken(
-                issuer: JwtIssuer,
-                audience: JwtAudience,
+                issuer: _jwtConfig.Issuer,
+                audience: _jwtConfig.Audience,
                 claims: claims,
                 expires: DateTime.UtcNow.AddDays(7),
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)

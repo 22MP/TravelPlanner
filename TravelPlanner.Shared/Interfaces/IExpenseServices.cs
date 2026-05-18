@@ -11,6 +11,6 @@ namespace TravelPlanner.Shared.Interfaces
         Task<ExpenseDto> UpdateAsync(int id, UpdateExpenseDto dto);
         Task<bool> DeleteAsync(int id);
         Task<decimal> GetTotalExpensesAsync(int tripId);
-        Task<decimal> GetRemainingBudgetAsync(int tripId, decimal budget);
+        Task<BudgetSummaryDto> GetBudgetSummaryAsync(int tripId, decimal plannedBudget);
     }
 }

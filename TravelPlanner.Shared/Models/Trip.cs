@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace TravelPlanner.Shared.Models
+﻿namespace TravelPlanner.Shared.Models
 {
     public class Trip
     {
@@ -10,12 +8,15 @@ namespace TravelPlanner.Shared.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public decimal Budget { get; set; }
+
         public string Notes { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
+        // Kojim korisniku pripada putovanje
         public int UserId { get; set; }
         public User User { get; set; } = null!;
 
+      
         public ICollection<Destination> Destinations { get; set; } = new List<Destination>();
         public ICollection<Activity> Activities { get; set; } = new List<Activity>();
         public ICollection<Expense> Expenses { get; set; } = new List<Expense>();

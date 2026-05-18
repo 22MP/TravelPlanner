@@ -36,7 +36,11 @@ namespace TravelService.Services
 
         public async Task<DestinationDto> CreateAsync(CreateDestinationDto dto)
         {
-            if (dto.DepartureDate < dto.ArrivalDate)
+            var tripExists = await _context.Trips.AnyAsync(t => t.Id == dto.TripId);
+            if (!tripExists)
+                return new DestinationDto();
+
+            if (dto.DepartureDate <= dto.ArrivalDate)
                 return new DestinationDto();
 
             var destination = _mapper.Map<Destination>(dto);
@@ -45,12 +49,15 @@ namespace TravelService.Services
             return _mapper.Map<DestinationDto>(destination);
         }
 
-        public async Task<DestinationDto> UpdateAsync(int id, UpdateDestinationDto dto)
+        public async Task<DestinationDto> UpdateAsync(int tripId, int id, UpdateDestinationDto dto)
         {
             var destination = await _context.Destinations.FindAsync(id);
             if (destination == null)
                 return new DestinationDto();
-
+            if (destination.TripId != tripId)
+            {
+                return new DestinationDto();
+            }
             if (dto.DepartureDate < dto.ArrivalDate)
                 return new DestinationDto();
 
@@ -59,12 +66,15 @@ namespace TravelService.Services
             return _mapper.Map<DestinationDto>(destination);
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int tripId, int id)
         {
             var destination = await _context.Destinations.FindAsync(id);
             if (destination == null)
                 return false;
-
+            if(destination.TripId != tripId)
+            {
+                return false;
+            }
             _context.Destinations.Remove(destination);
             await _context.SaveChangesAsync();
             return true;

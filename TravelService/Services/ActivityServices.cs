@@ -36,6 +36,10 @@ namespace TravelService.Services
 
         public async Task<ActivityDto> CreateAsync(CreateActivityDto dto)
         {
+            var tripExists = await _context.Trips.AnyAsync(t => t.Id == dto.TripId);
+            if (!tripExists)
+                return new ActivityDto();
+
             if (dto.EstimatedCost < 0)
                 return new ActivityDto();
 

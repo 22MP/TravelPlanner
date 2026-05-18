@@ -1,20 +1,37 @@
-using System.Threading;
 using Microsoft.ServiceFabric.Services.Runtime;
+using System;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BackendSF
 {
     internal static class Program
     {
+        /// <summary>
+        /// This is the entry point of the service host process.
+        /// </summary>
         private static void Main()
         {
-            ServiceRuntime.RegisterServiceAsync("BackendSFType",
-                context => new BackendSF(context)).GetAwaiter().GetResult();
+            try
+            {
+                
 
-            ServiceEventSource.Current.ServiceTypeRegistered(
-                System.Diagnostics.Process.GetCurrentProcess().Id,
-                typeof(BackendSF).Name);
+                ServiceRuntime.RegisterServiceAsync("BackendSFType",
+                    context => new BackendSF(context)).GetAwaiter().GetResult();
 
-            Thread.Sleep(Timeout.Infinite);
+
+
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(BackendSF).Name);
+
+                // Prevents this host process from terminating so services keeps running. 
+                Thread.Sleep(Timeout.Infinite);
+            }
+            catch (Exception e)
+            {
+                ServiceEventSource.Current.ServiceHostInitializationFailed(e.ToString());
+                throw;
+            }
         }
     }
 }

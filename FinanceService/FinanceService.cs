@@ -21,10 +21,18 @@ namespace FinanceService
         public FinanceService(StatelessServiceContext context)
             : base(context)
         {
+            var configPackage = context.CodePackageActivationContext
+                .GetConfigurationPackageObject("Config");
+
+            var connectionString = configPackage.Settings
+                .Sections["ConnectionStrings"]
+                .Parameters["DefaultConnection"].Value;
+
             var services = new ServiceCollection();
             services.AddDbContext<FinanceDbContext>(options =>
-                options.UseSqlServer(
-                    "Server=DESKTOP-4CEGCEE\\SQLEXPRESS;Database=TravelPlannerFinance;Trusted_Connection=True;TrustServerCertificate=True;"));
+                options.UseSqlServer(connectionString));
+
+
             services.AddAutoMapper(cfg => cfg.AddProfile<Mappings.FinanceMappingProfile>());
             services.AddScoped<IExpenseServices, ExpenseServices>();
             services.AddLogging(builder =>
@@ -49,8 +57,9 @@ namespace FinanceService
             => _expenseServices.DeleteAsync(id);
         public Task<decimal> GetTotalExpensesAsync(int tripId)
             => _expenseServices.GetTotalExpensesAsync(tripId);
-        public Task<decimal> GetRemainingBudgetAsync(int tripId, decimal budget)
-            => _expenseServices.GetRemainingBudgetAsync(tripId, budget);
+        
+        public Task<BudgetSummaryDto> GetBudgetSummaryAsync(int tripId, decimal plannedBudget)
+            => _expenseServices.GetBudgetSummaryAsync(tripId, plannedBudget);
 
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
             => this.CreateServiceRemotingInstanceListeners();

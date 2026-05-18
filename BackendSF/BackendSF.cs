@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using System.Fabric;
 using System.IO;
 using System.Text;
+using BackendSF.Filters;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
@@ -28,9 +30,19 @@ namespace BackendSF
                         ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
 
                         var builder = WebApplication.CreateBuilder();
+                        builder.Services.AddScoped<SharedLinkAccessFilter>();
 
-                        // JWT
-                        var secret = "TravelPlannerSuperSecretKey123!TravelPlannerSuperSecretKey123!";
+                        // Konfiguracija se ucitava iz appsettings.json
+                        var configuration = builder.Configuration;
+
+                        var jwtSecret = configuration["Jwt:Secret"]
+                            ?? throw new InvalidOperationException("Jwt:Secret nije konfigurisan u appsettings.json");
+                        var jwtIssuer = configuration["Jwt:Issuer"]
+                            ?? throw new InvalidOperationException("Jwt:Issuer nije konfigurisan u appsettings.json");
+                        var jwtAudience = configuration["Jwt:Audience"]
+                            ?? throw new InvalidOperationException("Jwt:Audience nije konfigurisan u appsettings.json");
+
+                        // JWT autentifikacija
                         builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                             .AddJwtBearer(options =>
                             {
@@ -40,10 +52,10 @@ namespace BackendSF
                                     ValidateAudience = true,
                                     ValidateLifetime = true,
                                     ValidateIssuerSigningKey = true,
-                                    ValidIssuer = "TravelPlanner",
-                                    ValidAudience = "TravelPlannerUsers",
+                                    ValidIssuer = jwtIssuer,
+                                    ValidAudience = jwtAudience,
                                     IssuerSigningKey = new SymmetricSecurityKey(
-                                        Encoding.UTF8.GetBytes(secret))
+                                        Encoding.UTF8.GetBytes(jwtSecret))
                                 };
                             });
 
@@ -60,6 +72,8 @@ namespace BackendSF
 
                         builder.Services.AddControllers();
                         builder.Services.AddEndpointsApiExplorer();
+
+                        // Swagger sa podrskom za Bearer token
                         builder.Services.AddSwaggerGen(c =>
                         {
                             c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
@@ -69,7 +83,7 @@ namespace BackendSF
                                 Scheme = "Bearer",
                                 BearerFormat = "JWT",
                                 In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-                                Description = "Upiši: Bearer {token}"
+                                Description = "Upisi: Bearer {token}"
                             });
                             c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
                             {
@@ -97,11 +111,14 @@ namespace BackendSF
 
                         var app = builder.Build();
 
-                        if (app.Environment.IsDevelopment())
+                        app.UseSwagger();
+                        app.UseSwaggerUI(c =>
                         {
-                            app.UseSwagger();
-                            app.UseSwaggerUI();
-                        }
+                            c.SwaggerEndpoint("/swagger/v1/swagger.json", "TravelPlanner API v1");
+                            c.RoutePrefix = string.Empty;
+                        });
+
+                        app.MapGet("/", () => Results.Redirect("/swagger"));
 
                         app.UseCors("AllowAll");
                         app.UseAuthentication();

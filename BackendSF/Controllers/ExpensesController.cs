@@ -12,11 +12,14 @@ namespace BackendSF.Controllers
     public class ExpensesController : ControllerBase
     {
         private readonly IExpenseServices _expenseServices;
+        private readonly ITripServices _tripProxy;
 
         public ExpensesController()
         {
             _expenseServices = ServiceProxy.Create<IExpenseServices>(
                 new Uri("fabric:/TravelPlanner/FinanceService"));
+            _tripProxy = ServiceProxy.Create<ITripServices>(
+                new Uri("fabric:/TravelPlanner/TravelService"));
         }
 
         [HttpGet]
@@ -70,11 +73,14 @@ namespace BackendSF.Controllers
             return Ok(new { totalExpenses = total });
         }
 
-        [HttpGet("budget")]
-        public async Task<IActionResult> GetRemainingBudget(int tripId, [FromQuery] decimal budget)
+        [HttpGet("summary")]
+        public async Task<IActionResult> GetBudgetSummary(int tripId,int userId)
         {
-            var remaining = await _expenseServices.GetRemainingBudgetAsync(tripId, budget);
-            return Ok(new { remainingBudget = remaining });
+            
+            var trip = await _tripProxy.GetByIdAsync(tripId,userId);
+            var summary = await _expenseServices.GetBudgetSummaryAsync(tripId, trip.Budget);
+
+            return Ok(summary);
         }
     }
 }

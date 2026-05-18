@@ -32,18 +32,24 @@ namespace TravelService.Services
             await _context.SaveChangesAsync();
 
             // Fire & Forget — ne cekamo rezultat
-            var proxy = ServiceProxy.Create<IEventDispatcherService>(
-                new Uri("fabric:/TravelPlanner/EventDispatcher"));
-
-            _ = proxy.EnqueueShareTripEventAsync(new ShareTripEvent
+            _ = Task.Run(async () =>
             {
-                TripId = dto.TripId,
-                Token = token,
-                AccessType = dto.AccessType.ToString(),
-                CreatedAt = DateTime.UtcNow
+                try
+                {
+                    var proxy = ServiceProxy.Create<IEventDispatcherService>(
+                        new Uri("fabric:/TravelPlanner/EventDispatcher"));
+
+                    await proxy.EnqueueShareTripEventAsync(new ShareTripEvent
+                    {
+                        TripId = dto.TripId,
+                        Token = token,
+                        AccessType = dto.AccessType.ToString(),
+                        CreatedAt = DateTime.UtcNow
+                    });
+                }
+                catch { /* EventDispatcher nije dostupan, ignorisi */ }
             });
 
-            // Odmah vracamo rezultat korisniku
             return new SharedLinkDto
             {
                 Id = sharedLink.Id,
@@ -54,12 +60,14 @@ namespace TravelService.Services
                 TripId = sharedLink.TripId
             };
         }
+
         public async Task<SharedLinkDto> GetByTokenAsync(string token)
         {
             var link = await _context.SharedLinks
                 .FirstOrDefaultAsync(s => s.Token == token);
 
-            if (link == null)
+            // Provjera null I isteka
+            if (link == null || link.ExpiresAt < DateTime.UtcNow)
                 return new SharedLinkDto();
 
             return new SharedLinkDto

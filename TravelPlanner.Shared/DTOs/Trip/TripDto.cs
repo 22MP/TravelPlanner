@@ -11,5 +11,8 @@
         public string Notes { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
         public int UserId { get; set; }
+
+        public decimal TotalExpenses { get; set; }
+        public decimal RemainingBudget { get; set; }
     }
 }

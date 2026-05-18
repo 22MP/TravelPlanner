@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BackendSF.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using TravelPlanner.Shared.DTOs.Activity;
@@ -9,6 +10,7 @@ namespace BackendSF.Controllers
     [ApiController]
     [Route("api/trips/{tripId}/activities")]
     [Authorize]
+    [ServiceFilter(typeof(SharedLinkAccessFilter))]
     public class ActivitiesController : ControllerBase
     {
         private readonly IActivityServices _activityServices;

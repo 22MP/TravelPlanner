@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using BackendSF.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using TravelPlanner.Shared.DTOs.Checklist;
@@ -9,6 +10,7 @@ namespace BackendSF.Controllers
     [ApiController]
     [Route("api/trips/{tripId}/checklist")]
     [Authorize]
+    [ServiceFilter(typeof(SharedLinkAccessFilter))]
     public class ChecklistController : ControllerBase
     {
         private readonly IChecklistServices _checklistServices;
@@ -23,7 +25,7 @@ namespace BackendSF.Controllers
         public async Task<IActionResult> GetAll(int tripId)
         {
             var items = await _checklistServices.GetAllByTripAsync(tripId);
-            return Ok(items);
+            return CreatedAtAction(nameof(GetAll), new { tripId }, items);
         }
 
         [HttpPost]

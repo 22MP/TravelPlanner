@@ -8,7 +8,7 @@ namespace TravelPlanner.Shared.Interfaces
         Task<IEnumerable<DestinationDto>> GetAllByTripAsync(int tripId);
         Task<DestinationDto> GetByIdAsync(int id);
         Task<DestinationDto> CreateAsync(CreateDestinationDto dto);
-        Task<DestinationDto> UpdateAsync(int id, UpdateDestinationDto dto);
-        Task<bool> DeleteAsync(int id);
+        Task<DestinationDto> UpdateAsync(int tripId,int id, UpdateDestinationDto dto);
+        Task<bool> DeleteAsync(int tripId,int id);
     }
 }

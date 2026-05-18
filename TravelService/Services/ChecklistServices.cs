@@ -28,6 +28,9 @@ namespace TravelService.Services
 
         public async Task<ChecklistItemDto> CreateAsync(CreateChecklistItemDto dto)
         {
+            var tripExists = await _context.Trips.AnyAsync(t => t.Id == dto.TripId);
+            if (!tripExists)
+                return new ChecklistItemDto();
             var item = _mapper.Map<ChecklistItem>(dto);
             _context.ChecklistItems.Add(item);
             await _context.SaveChangesAsync();
