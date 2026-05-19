@@ -1,0 +1,397 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa10384.39178\\App.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripsPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\TripsPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\expenseService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\services\\expenseService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\TripContext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\context\\TripContext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\AuthContext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\context\\AuthContext.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\SharedTripPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\SharedTripPage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\activityService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\services\\activityService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\tripService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\services\\tripService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\TripDetailPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\expenses\\ExpenseForm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\expenses\\ExpenseForm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Expense.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\models\\Expense.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\destinationService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\services\\destinationService.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripForm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\trips\\TripForm.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\shared\\SharedLinks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\shared\\SharedLinks.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\components\\trips\\TripCard.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\TripDetailPage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Trip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\models\\Trip.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\AdminPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\pages\\AdminPage.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa10384.39178\\App.css",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\Rar$DIa10384.39178\\App.css",
+              "ToolTip": "C:\\Users\\User\\AppData\\Local\\Temp\\Rar$DIa10384.39178\\App.css",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\Rar$DIa10384.39178\\App.css",
+              "ViewState": "AQIAAKQAAAAAAAAAAAAYwLgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T09:25:55.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\index.css",
+              "RelativeDocumentMoniker": "src\\index.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\index.css",
+              "RelativeToolTip": "src\\index.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMIBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T09:01:30.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\App.css",
+              "RelativeDocumentMoniker": "src\\App.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\App.css",
+              "RelativeToolTip": "src\\App.css",
+              "ViewState": "AQIAAK8AAAAAAAAAAAAYwMMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T09:01:26.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TripContext.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\TripContext.jsx",
+              "RelativeDocumentMoniker": "src\\context\\TripContext.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\TripContext.jsx",
+              "RelativeToolTip": "src\\context\\TripContext.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T09:00:49.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthContext.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\AuthContext.jsx",
+              "RelativeDocumentMoniker": "src\\context\\AuthContext.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\context\\AuthContext.jsx",
+              "RelativeToolTip": "src\\context\\AuthContext.jsx",
+              "ViewState": "AQIAADQAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T09:00:17.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "activityService.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\activityService.js",
+              "RelativeDocumentMoniker": "src\\services\\activityService.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\activityService.js",
+              "RelativeToolTip": "src\\services\\activityService.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T08:40:24.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "tripService.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\tripService.js",
+              "RelativeDocumentMoniker": "src\\services\\tripService.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\tripService.js",
+              "RelativeToolTip": "src\\services\\tripService.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T07:11:05.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "expenseService.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\expenseService.js",
+              "RelativeDocumentMoniker": "src\\services\\expenseService.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\expenseService.js",
+              "RelativeToolTip": "src\\services\\expenseService.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T07:01:57.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TripsPage.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripsPage.jsx",
+              "RelativeDocumentMoniker": "src\\pages\\TripsPage.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripsPage.jsx",
+              "RelativeToolTip": "src\\pages\\TripsPage.jsx",
+              "ViewState": "AQIAAE8AAAAAAAAAAAAmwGIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T06:08:40.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExpenseForm.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\expenses\\ExpenseForm.jsx",
+              "RelativeDocumentMoniker": "src\\components\\expenses\\ExpenseForm.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\expenses\\ExpenseForm.jsx",
+              "RelativeToolTip": "src\\components\\expenses\\ExpenseForm.jsx",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T07:05:17.032Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Expense.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Expense.js",
+              "RelativeDocumentMoniker": "src\\models\\Expense.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Expense.js",
+              "RelativeToolTip": "src\\models\\Expense.js",
+              "ViewState": "AQIAACEAAAAAAAAAAAAmwDQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T07:04:58.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SharedTripPage.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.jsx",
+              "RelativeDocumentMoniker": "src\\pages\\SharedTripPage.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.jsx",
+              "RelativeToolTip": "src\\pages\\SharedTripPage.jsx",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAAAEABAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T06:06:21.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SharedTripPage.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.css",
+              "RelativeDocumentMoniker": "src\\pages\\SharedTripPage.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\SharedTripPage.css",
+              "RelativeToolTip": "src\\pages\\SharedTripPage.css",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T06:06:18.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "destinationService.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\destinationService.js",
+              "RelativeDocumentMoniker": "src\\services\\destinationService.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\services\\destinationService.js",
+              "RelativeToolTip": "src\\services\\destinationService.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T06:45:27.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TripDetailPage.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.jsx",
+              "RelativeDocumentMoniker": "src\\pages\\TripDetailPage.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.jsx",
+              "RelativeToolTip": "src\\pages\\TripDetailPage.jsx",
+              "ViewState": "AQIAADgAAAAAAAAAAAAAAEoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T05:48:15.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SharedLinks.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\shared\\SharedLinks.jsx",
+              "RelativeDocumentMoniker": "src\\components\\shared\\SharedLinks.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\shared\\SharedLinks.jsx",
+              "RelativeToolTip": "src\\components\\shared\\SharedLinks.jsx",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAswIoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T06:12:39.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-19T05:56:34.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TripForm.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripForm.jsx",
+              "RelativeDocumentMoniker": "src\\components\\trips\\TripForm.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripForm.jsx",
+              "RelativeToolTip": "src\\components\\trips\\TripForm.jsx",
+              "ViewState": "AQIAABcAAAAAAAAAAAAswCIAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T05:52:51.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TripCard.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripCard.jsx",
+              "RelativeDocumentMoniker": "src\\components\\trips\\TripCard.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\components\\trips\\TripCard.jsx",
+              "RelativeToolTip": "src\\components\\trips\\TripCard.jsx",
+              "ViewState": "AQIAACoAAAAAAAAAAAAswEgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-19T05:53:21.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TripDetailPage.css",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.css",
+              "RelativeDocumentMoniker": "src\\pages\\TripDetailPage.css",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\TripDetailPage.css",
+              "RelativeToolTip": "src\\pages\\TripDetailPage.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-05-19T05:48:13.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Trip.js",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Trip.js",
+              "RelativeDocumentMoniker": "src\\models\\Trip.js",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\models\\Trip.js",
+              "RelativeToolTip": "src\\models\\Trip.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-05-19T05:47:00.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AdminPage.jsx",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\AdminPage.jsx",
+              "RelativeDocumentMoniker": "src\\pages\\AdminPage.jsx",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Veb\\vjezbe\\travel-planner-frontend\\src\\pages\\AdminPage.jsx",
+              "RelativeToolTip": "src\\pages\\AdminPage.jsx",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAUwAsAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-05-18T22:20:05.716Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+.shared-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shared-links-create {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.shared-empty {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding: 8px 0;
+}
+
+.shared-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shared-link-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+
+.shared-link-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent-hover);
+  background: var(--color-accent-light);
+  padding: 2px 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.shared-link-token {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.shared-link-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,28 @@
+.trips-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.trips-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.trips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 500px) {
+  .trips-page-header {
+    flex-direction: column;
+  }
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
+}
