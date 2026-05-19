@@ -3,7 +3,7 @@ import tripService from '../services/tripService';
 import { useTripContext } from '../context/TripContext';
 import TripCard from '../components/trips/TripCard';
 import TripForm from '../components/trips/TripForm';
-import './TripsPage.css';
+import '../css/TripsPage.css';
 import { Trip } from '../models/Trip';
 
 export default function TripsPage() {

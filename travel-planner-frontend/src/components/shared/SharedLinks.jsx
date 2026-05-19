@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import sharedLinkService from '../../services/sharedLinkService';
-import './SharedLinks.css';
+import '../../css/SharedLinks.css';
 
 const ACCESS_TYPES = ['view', 'edit'];
 

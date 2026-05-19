@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import authService from '../services/authService';
-import './AuthPage.css';
+import '../css/AuthPage.css';
 
 function validate(form) {
   const errors = {};

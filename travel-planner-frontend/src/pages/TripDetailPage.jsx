@@ -14,7 +14,7 @@ import ActivityForm from '../components/activities/ActivityForm';
 import ExpenseForm from '../components/expenses/ExpenseForm';
 import ChecklistItem from '../components/checklist/ChecklistItem';
 import SharedLinks from '../components/shared/SharedLinks';
-import './TripDetailPage.css';
+import '../css/TripDetailPage.css';
 
 const TABS = ['overview', 'destinations', 'activities', 'expenses', 'checklist', 'sharing'];
 

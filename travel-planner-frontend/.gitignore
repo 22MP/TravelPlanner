@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.vs
+
+node_modules/
+dist/
+bin/
+obj/

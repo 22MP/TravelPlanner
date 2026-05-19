@@ -1,6 +1,6 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import './Navbar.css';
+import '../../css/Navbar.css';
 
 export default function Navbar() {
   const { user, isAuthenticated, logout } = useAuth();
@@ -14,7 +14,7 @@ export default function Navbar() {
 
   if (!isAuthenticated) return null;
 
-  // user.name je firstName + lastName, postavljeno u User konstruktoru
+  
   const displayName = user?.name || user?.email || '';
 
   return (

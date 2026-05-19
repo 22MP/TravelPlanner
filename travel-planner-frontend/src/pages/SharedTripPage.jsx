@@ -8,7 +8,7 @@ import checklistService from '../services/checklistService';
 import expenseService from '../services/expenseService';
 import { Activity } from '../models/Activity';
 import { Expense } from '../models/Expense';
-import './SharedTripPage.css';
+import '../css/SharedTripPage.css';
 
 function formatDate(dateStr) {
   if (!dateStr) return '';

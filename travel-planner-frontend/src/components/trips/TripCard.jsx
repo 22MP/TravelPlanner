@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import './TripCard.css';
+import '../../css/TripCard.css';
 
 function formatDate(dateStr) {
   if (!dateStr) return '';

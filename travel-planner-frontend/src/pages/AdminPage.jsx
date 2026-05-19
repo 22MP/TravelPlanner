@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import authService from '../services/authService';
 import { User } from '../models/User';
-import './AdminPage.css';
+import '../css/AdminPage.css';
 
 export default function AdminPage() {
   const [users, setUsers] = useState([]);
