@@ -25,8 +25,21 @@ namespace BackendSF.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll(int tripId)
         {
-            var expenses = await _expenseServices.GetAllByTripAsync(tripId);
-            return Ok(expenses);
+            try
+            {
+                var expenses = await _expenseServices.GetAllByTripAsync(tripId);
+                return Ok(expenses);
+            }
+            catch (Exception ex)
+            {
+                
+                return StatusCode(500, new
+                {
+                    message = ex.Message,
+                    inner = ex.InnerException?.Message,
+                    stack = ex.StackTrace
+                });
+            }
         }
 
         [HttpGet("{id}")]

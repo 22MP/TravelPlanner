@@ -47,13 +47,21 @@ namespace BackendSF.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             var trip = await _tripServices.GetByIdAsync(id, GetUserId());
-            var summary = await _expenseServices.GetBudgetSummaryAsync(id, trip.Budget);
-
-            trip.TotalExpenses = summary.TotalExpenses;
-            trip.RemainingBudget = summary.RemainingBudget;
-
             if (trip.Id == 0)
                 return NotFound(new { message = "Putovanje nije pronadjeno." });
+
+            try
+            {
+                var summary = await _expenseServices.GetBudgetSummaryAsync(id, trip.Budget);
+                trip.TotalExpenses = summary.TotalExpenses;
+                trip.RemainingBudget = summary.RemainingBudget;
+            }
+            catch
+            {
+                // FinanceService unavailable — return trip without expense summary
+                trip.TotalExpenses = 0;
+                trip.RemainingBudget = trip.Budget;
+            }
 
             return Ok(trip);
         }

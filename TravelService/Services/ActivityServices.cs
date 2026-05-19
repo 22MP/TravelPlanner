@@ -9,18 +9,19 @@ namespace TravelService.Services
 {
     public class ActivityServices : IActivityServices
     {
-        private readonly TravelDbContext _context;
+        private readonly IDbContextFactory<TravelDbContext> _contextFactory;
         private readonly IMapper _mapper;
 
-        public ActivityServices(TravelDbContext context, IMapper mapper)
+        public ActivityServices(IDbContextFactory<TravelDbContext> contextFactory, IMapper mapper)
         {
-            _context = context;
+            _contextFactory = contextFactory;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<ActivityDto>> GetAllByTripAsync(int tripId)
         {
-            var activities = await _context.Activities
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var activities = await context.Activities
                 .Where(a => a.TripId == tripId)
                 .ToListAsync();
             return _mapper.Map<IEnumerable<ActivityDto>>(activities);
@@ -28,7 +29,8 @@ namespace TravelService.Services
 
         public async Task<ActivityDto> GetByIdAsync(int id)
         {
-            var activity = await _context.Activities.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var activity = await context.Activities.FindAsync(id);
             if (activity == null)
                 return new ActivityDto();
             return _mapper.Map<ActivityDto>(activity);
@@ -36,7 +38,8 @@ namespace TravelService.Services
 
         public async Task<ActivityDto> CreateAsync(CreateActivityDto dto)
         {
-            var tripExists = await _context.Trips.AnyAsync(t => t.Id == dto.TripId);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var tripExists = await context.Trips.AnyAsync(t => t.Id == dto.TripId);
             if (!tripExists)
                 return new ActivityDto();
 
@@ -44,14 +47,15 @@ namespace TravelService.Services
                 return new ActivityDto();
 
             var activity = _mapper.Map<Activity>(dto);
-            _context.Activities.Add(activity);
-            await _context.SaveChangesAsync();
+            context.Activities.Add(activity);
+            await context.SaveChangesAsync();
             return _mapper.Map<ActivityDto>(activity);
         }
 
         public async Task<ActivityDto> UpdateAsync(int id, UpdateActivityDto dto)
         {
-            var activity = await _context.Activities.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var activity = await context.Activities.FindAsync(id);
             if (activity == null)
                 return new ActivityDto();
 
@@ -59,18 +63,19 @@ namespace TravelService.Services
                 return new ActivityDto();
 
             _mapper.Map(dto, activity);
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
             return _mapper.Map<ActivityDto>(activity);
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var activity = await _context.Activities.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var activity = await context.Activities.FindAsync(id);
             if (activity == null)
                 return false;
 
-            _context.Activities.Remove(activity);
-            await _context.SaveChangesAsync();
+            context.Activities.Remove(activity);
+            await context.SaveChangesAsync();
             return true;
         }
     }

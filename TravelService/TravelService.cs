@@ -30,26 +30,25 @@ namespace TravelService
         public TravelService(StatelessServiceContext context)
             : base(context)
         {
-            // Citanje connection stringa iz Settings.xml 
             var configPackage = context.CodePackageActivationContext
                 .GetConfigurationPackageObject("Config");
-
             var connectionString = configPackage.Settings
                 .Sections["ConnectionStrings"]
                 .Parameters["DefaultConnection"].Value;
 
             var services = new ServiceCollection();
 
-            services.AddDbContext<TravelDbContext>(options =>
+            // ISPRAVKA: DbContextFactory umjesto DbContext + Singleton umjesto Scoped
+            services.AddDbContextFactory<TravelDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             services.AddAutoMapper(cfg => cfg.AddProfile<Mappings.TravelMappingProfile>());
 
-            services.AddScoped<ITripServices, TripServices>();
-            services.AddScoped<IDestinationServices, DestinationServices>();
-            services.AddScoped<IActivityServices, ActivityServices>();
-            services.AddScoped<IChecklistServices, ChecklistServices>();
-            services.AddScoped<ISharedLinkServices, SharedLinkServices>();
+            services.AddSingleton<ITripServices, TripServices>();
+            services.AddSingleton<IDestinationServices, DestinationServices>();
+            services.AddSingleton<IActivityServices, ActivityServices>();
+            services.AddSingleton<IChecklistServices, ChecklistServices>();
+            services.AddSingleton<ISharedLinkServices, SharedLinkServices>();
 
             services.AddLogging(builder =>
             {
@@ -58,6 +57,7 @@ namespace TravelService
             });
 
             var provider = services.BuildServiceProvider();
+
             _tripServices = provider.GetRequiredService<ITripServices>();
             _destinationServices = provider.GetRequiredService<IDestinationServices>();
             _activityServices = provider.GetRequiredService<IActivityServices>();

@@ -25,7 +25,7 @@ namespace BackendSF.Controllers
         public async Task<IActionResult> GetAll(int tripId)
         {
             var items = await _checklistServices.GetAllByTripAsync(tripId);
-            return CreatedAtAction(nameof(GetAll), new { tripId }, items);
+            return Ok(items);
         }
 
         [HttpPost]

@@ -130,41 +130,6 @@ namespace TravelService.Migrations
                     b.ToTable("Destinations");
                 });
 
-            modelBuilder.Entity("TravelPlanner.Shared.Models.Expense", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Category")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TripId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TripId");
-
-                    b.ToTable("Expense");
-                });
-
             modelBuilder.Entity("TravelPlanner.Shared.Models.SharedLink", b =>
                 {
                     b.Property<int>("Id")
@@ -270,17 +235,6 @@ namespace TravelService.Migrations
                     b.Navigation("Trip");
                 });
 
-            modelBuilder.Entity("TravelPlanner.Shared.Models.Expense", b =>
-                {
-                    b.HasOne("TravelPlanner.Shared.Models.Trip", "Trip")
-                        .WithMany("Expenses")
-                        .HasForeignKey("TripId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Trip");
-                });
-
             modelBuilder.Entity("TravelPlanner.Shared.Models.SharedLink", b =>
                 {
                     b.HasOne("TravelPlanner.Shared.Models.Trip", "Trip")
@@ -299,8 +253,6 @@ namespace TravelService.Migrations
                     b.Navigation("ChecklistItems");
 
                     b.Navigation("Destinations");
-
-                    b.Navigation("Expenses");
 
                     b.Navigation("SharedLinks");
                 });

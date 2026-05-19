@@ -9,11 +9,11 @@ namespace TravelService.Services
 {
     public class SharedLinkServices : ISharedLinkServices
     {
-        private readonly TravelDbContext _context;
+        private readonly IDbContextFactory<TravelDbContext> _contextFactory;
 
-        public SharedLinkServices(TravelDbContext context)
+        public SharedLinkServices(IDbContextFactory<TravelDbContext> contextFactory)
         {
-            _context = context;
+            _contextFactory = contextFactory;
         }
 
         public async Task<SharedLinkDto> CreateAsync(CreateSharedLinkDto dto)
@@ -28,8 +28,9 @@ namespace TravelService.Services
                 TripId = dto.TripId
             };
 
-            _context.SharedLinks.Add(sharedLink);
-            await _context.SaveChangesAsync();
+            using var context = await _contextFactory.CreateDbContextAsync();
+            context.SharedLinks.Add(sharedLink);
+            await context.SaveChangesAsync();
 
             // Fire & Forget — ne cekamo rezultat
             _ = Task.Run(async () =>
@@ -63,10 +64,10 @@ namespace TravelService.Services
 
         public async Task<SharedLinkDto> GetByTokenAsync(string token)
         {
-            var link = await _context.SharedLinks
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var link = await context.SharedLinks
                 .FirstOrDefaultAsync(s => s.Token == token);
 
-            // Provjera null I isteka
             if (link == null || link.ExpiresAt < DateTime.UtcNow)
                 return new SharedLinkDto();
 
@@ -83,7 +84,8 @@ namespace TravelService.Services
 
         public async Task<IEnumerable<SharedLinkDto>> GetAllByTripAsync(int tripId)
         {
-            return await _context.SharedLinks
+            using var context = await _contextFactory.CreateDbContextAsync();
+            return await context.SharedLinks
                 .Where(s => s.TripId == tripId)
                 .Select(s => new SharedLinkDto
                 {
@@ -99,18 +101,20 @@ namespace TravelService.Services
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var link = await _context.SharedLinks.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var link = await context.SharedLinks.FindAsync(id);
             if (link == null)
                 return false;
 
-            _context.SharedLinks.Remove(link);
-            await _context.SaveChangesAsync();
+            context.SharedLinks.Remove(link);
+            await context.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> ValidateTokenAsync(string token, string requiredAccessType)
         {
-            var link = await _context.SharedLinks
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var link = await context.SharedLinks
                 .FirstOrDefaultAsync(s => s.Token == token);
 
             if (link == null)

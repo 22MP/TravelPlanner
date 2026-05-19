@@ -9,18 +9,19 @@ namespace TravelService.Services
 {
     public class DestinationServices : IDestinationServices
     {
-        private readonly TravelDbContext _context;
+        private readonly IDbContextFactory<TravelDbContext> _contextFactory;
         private readonly IMapper _mapper;
 
-        public DestinationServices(TravelDbContext context, IMapper mapper)
+        public DestinationServices(IDbContextFactory<TravelDbContext> contextFactory, IMapper mapper)
         {
-            _context = context;
+            _contextFactory = contextFactory;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<DestinationDto>> GetAllByTripAsync(int tripId)
         {
-            var destinations = await _context.Destinations
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var destinations = await context.Destinations
                 .Where(d => d.TripId == tripId)
                 .ToListAsync();
             return _mapper.Map<IEnumerable<DestinationDto>>(destinations);
@@ -28,7 +29,8 @@ namespace TravelService.Services
 
         public async Task<DestinationDto> GetByIdAsync(int id)
         {
-            var destination = await _context.Destinations.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var destination = await context.Destinations.FindAsync(id);
             if (destination == null)
                 return new DestinationDto();
             return _mapper.Map<DestinationDto>(destination);
@@ -36,7 +38,8 @@ namespace TravelService.Services
 
         public async Task<DestinationDto> CreateAsync(CreateDestinationDto dto)
         {
-            var tripExists = await _context.Trips.AnyAsync(t => t.Id == dto.TripId);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var tripExists = await context.Trips.AnyAsync(t => t.Id == dto.TripId);
             if (!tripExists)
                 return new DestinationDto();
 
@@ -44,39 +47,41 @@ namespace TravelService.Services
                 return new DestinationDto();
 
             var destination = _mapper.Map<Destination>(dto);
-            _context.Destinations.Add(destination);
-            await _context.SaveChangesAsync();
+            context.Destinations.Add(destination);
+            await context.SaveChangesAsync();
             return _mapper.Map<DestinationDto>(destination);
         }
 
         public async Task<DestinationDto> UpdateAsync(int tripId, int id, UpdateDestinationDto dto)
         {
-            var destination = await _context.Destinations.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var destination = await context.Destinations.FindAsync(id);
             if (destination == null)
                 return new DestinationDto();
+
             if (destination.TripId != tripId)
-            {
                 return new DestinationDto();
-            }
+
             if (dto.DepartureDate < dto.ArrivalDate)
                 return new DestinationDto();
 
             _mapper.Map(dto, destination);
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
             return _mapper.Map<DestinationDto>(destination);
         }
 
         public async Task<bool> DeleteAsync(int tripId, int id)
         {
-            var destination = await _context.Destinations.FindAsync(id);
+            using var context = await _contextFactory.CreateDbContextAsync();
+            var destination = await context.Destinations.FindAsync(id);
             if (destination == null)
                 return false;
-            if(destination.TripId != tripId)
-            {
+
+            if (destination.TripId != tripId)
                 return false;
-            }
-            _context.Destinations.Remove(destination);
-            await _context.SaveChangesAsync();
+
+            context.Destinations.Remove(destination);
+            await context.SaveChangesAsync();
             return true;
         }
     }
